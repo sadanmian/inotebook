@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import NoteContext from "../context/notes/noteContext";
 
 export default function Home() {
+  const context = useContext(NoteContext);
+  const { notes, setNotes } = context;
+
   return (
     <div>
       <div className="container my-3">
@@ -48,6 +52,7 @@ export default function Home() {
 
       <div className="container">
         <h2>Your Notes</h2>
+        {notes.map((event) => event.title)}
       </div>
     </div>
   );
