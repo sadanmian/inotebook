@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import NoteContext from "../context/notes/noteContext";
 
-export default function NoteItem({ note }) {
+export default function NoteItem({ note, updateNote }) {
   const { title, description, tag, _id } = note;
   const context = useContext(NoteContext);
   const { deleteNote } = context;
@@ -17,7 +17,10 @@ export default function NoteItem({ note }) {
               }}
               className="fa-regular fa-trash-can mx-2"
             ></i>
-            <i className="fa-regular fa-pen-to-square mx-2"></i>
+            <i
+              className="fa-regular fa-pen-to-square mx-2"
+              onClick={() => updateNote(note)}
+            ></i>
           </div>
           <p className="card-text">{description}</p>
         </div>

@@ -18,7 +18,6 @@ const NoteState = (props) => {
       },
     });
     const json = await response.json();
-    // console.log(json);
     setNotes(json);
   };
 
@@ -36,8 +35,8 @@ const NoteState = (props) => {
     });
 
     const note = {
-      _id: "64ed8822553a487d829b3d94b6",
-      user: "64eb969956d4c5ffa786a095",
+      _id: "64ed8822553a487d829b3d9b6",
+      user: "64eb969956d4c5fa786a095",
       title: title,
       description: description,
       tag: tag,
@@ -48,8 +47,19 @@ const NoteState = (props) => {
   };
 
   // Delete a note
-  const deleteNote = (id) => {
-    console.log("Note deleted with id:" + id);
+  const deleteNote = async (id) => {
+    // API call
+    const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token":
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlYjk2OTk1NmQ0YzVmZmE3ODZhMDk1In0sImlhdCI6MTY5MzIwMTM3OH0.iP5eX54KsB6puu5iYC2n_D1JiY8xhs4HXq47AGHbunE",
+      },
+    });
+    const json = response.json();
+
+    // console.log("Note deleted with id:" + id);
     const newNote = notes.filter((note) => note._id !== id);
     setNotes(newNote);
   };

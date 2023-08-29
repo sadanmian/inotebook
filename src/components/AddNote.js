@@ -21,6 +21,7 @@ export default function AddNote() {
       [event.target.name]: event.target.value,
     });
   };
+  
   return (
     <div>
       <div className="container my-3">
@@ -51,21 +52,20 @@ export default function AddNote() {
               name="description"
             />
           </div>
-          <div className="mb-3 form-check">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id="exampleCheck1"
-            />
-            <label className="form-check-label" htmlFor="exampleCheck1">
-              Check me out
+          <div className="mb-3">
+            <label htmlFor="tag" className="form-label">
+              Tag
             </label>
+            <input
+              onChange={onChange}
+              type="text"
+              className="form-control"
+              id="tag"
+              name="tag"
+            />
           </div>
-          <button
-            type="submit"
-            className="btn btn-dark"
-            onClick={handleClick}
-          >
+
+          <button type="submit" className="btn btn-dark" onClick={handleClick}>
             Add Note
           </button>
         </form>
