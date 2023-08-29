@@ -85,6 +85,8 @@ export default function Notes() {
                     Title
                   </label>
                   <input
+                    minLength={5}
+                    required
                     onChange={onChange}
                     type="text"
                     className="form-control"
@@ -99,6 +101,8 @@ export default function Notes() {
                     Description
                   </label>
                   <input
+                    minLength={5}
+                    required
                     onChange={onChange}
                     type="text"
                     className="form-control"
@@ -132,6 +136,9 @@ export default function Notes() {
                 Close
               </button>
               <button
+                disabled={
+                  note.etitle.length < 5 || note.edescription.length < 5
+                }
                 onClick={handleClick}
                 type="button"
                 className="btn btn-dark"
@@ -144,6 +151,9 @@ export default function Notes() {
       </div>
       <div className="row my-3 container">
         <h2>Your Notes</h2>
+        {notes.length === 0 && (
+          <p className="text-danger">No Notes to display</p>
+        )}
         {notes.map((note) => (
           <NoteItem key={note._id} note={note} updateNote={updateNote} />
         ))}
