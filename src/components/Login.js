@@ -26,8 +26,8 @@ export default function Login({ showAlert }) {
     if (json.success) {
       // save the auth token and redirect
       localStorage.setItem("token", json.authtoken);
-      history("/");
       showAlert("Account Logged in Successfully", "success");
+      history("/");
     } else {
       showAlert("Invalid Details", "danger");
     }
@@ -42,6 +42,7 @@ export default function Login({ showAlert }) {
 
   return (
     <div className="container my-3">
+      <h2>Login to iNotebook</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">

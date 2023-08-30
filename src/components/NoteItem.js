@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import NoteContext from "../context/notes/noteContext";
 
 export default function NoteItem({ note, updateNote, showAlert }) {
-  const { title, description, tag, _id } = note;
+  const { title, description, _id } = note;
   const context = useContext(NoteContext);
   const { deleteNote } = context;
   return (

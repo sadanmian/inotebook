@@ -46,6 +46,7 @@ export default function Signup({ showAlert }) {
 
   return (
     <div className="container my-3">
+      <h2 className="my-3">Signup to iNotebook</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
