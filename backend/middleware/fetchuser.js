@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+var jwt = require("jsonwebtoken");
 const JWT_SECRET = "ThisIsSadanMian";
 
 const fetchuser = (req, res, next) => {

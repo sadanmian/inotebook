@@ -3,7 +3,7 @@ const User = require("../models/User");
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+var jwt = require("jsonwebtoken");
 const fetchuser = require("../middleware/fetchuser");
 
 const JWT_SECRET = "ThisIsSadanMian";
@@ -34,9 +34,9 @@ router.post(
           error: "Sorry a user with this email already exists",
         });
       }
-
-      const salt = await bcrypt.genSaltSync(10);
+      const salt = await bcrypt.genSalt(10);
       const secPass = await bcrypt.hash(req.body.password, salt);
+
       // Create a new User
       user = await User.create({
         name: req.body.name,

@@ -18,7 +18,7 @@ export default function Login() {
       },
       body: JSON.stringify({
         email: credentials.email,
-        passowrd: credentials.password,
+        password: credentials.password,
       }),
     });
     const json = await response.json();
