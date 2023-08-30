@@ -13,7 +13,7 @@ export default function AddNote({ showAlert }) {
   const handleClick = (event) => {
     event.preventDefault();
     addNote(note.title, note.description, note.tag);
-    setNote({ title: "", description: "", tag: "" });
+    setNote({ title: "", description: "", tag: "Default" });
     showAlert("Added Successfully", "success");
   };
 

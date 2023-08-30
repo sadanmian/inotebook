@@ -9,8 +9,7 @@ export default function NoteItem({ note, updateNote, showAlert }) {
     <div className="col-md-3">
       <div className="card my-3 ">
         <div className="card-body">
-          <div className="d-flex align-items-center">
-            <h5 className="card-title">{title}</h5>
+          <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill badge text-bg-dark">
             <i
               onClick={() => {
                 deleteNote(_id);
@@ -22,7 +21,11 @@ export default function NoteItem({ note, updateNote, showAlert }) {
               className="fa-regular fa-pen-to-square mx-2"
               onClick={() => updateNote(note)}
             ></i>
-          </div>
+          </span>
+          <h5 className="card-title">
+            <p>{title}</p>
+          </h5>
+
           <p className="card-text">{description}</p>
         </div>
       </div>

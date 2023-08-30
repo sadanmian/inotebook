@@ -160,9 +160,9 @@ export default function Notes({ showAlert }) {
         {notes.length === 0 && (
           <p className="text-danger">No Notes to display</p>
         )}
-        {notes.map((note) => (
+        {notes.map((note, index) => (
           <NoteItem
-            key={note._id}
+            key={index}
             note={note}
             updateNote={updateNote}
             showAlert={showAlert}

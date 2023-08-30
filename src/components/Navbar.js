@@ -46,7 +46,11 @@ export default function Navbar() {
                 <Link className="btn btn-light" to={"/login"} role="button">
                   Login
                 </Link>
-                <Link className="btn btn-light mx-2" to={"/signup"} role="button">
+                <Link
+                  className="btn btn-light mx-2"
+                  to={"/signup"}
+                  role="button"
+                >
                   Signup
                 </Link>
               </form>
