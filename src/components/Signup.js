@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Signup() {
+export default function Signup({ showAlert }) {
   const [credentials, setCredentials] = useState({
     name: "",
     email: "",
@@ -31,8 +31,9 @@ export default function Signup() {
       // save the auth token and redirect
       localStorage.setItem("token", json.authtoken);
       history("/");
+      showAlert("Account Created Successfully", "success");
     } else {
-      alert("Invalid Credentials");
+      showAlert("Invalid Credentials", "danger");
     }
   };
 

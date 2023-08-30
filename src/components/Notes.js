@@ -3,7 +3,7 @@ import NoteContext from "../context/notes/noteContext";
 import NoteItem from "./NoteItem";
 import AddNote from "./AddNote";
 
-export default function Notes() {
+export default function Notes({ showAlert }) {
   const context = useContext(NoteContext);
   const { notes, getNotes, editNote } = context;
 
@@ -36,6 +36,7 @@ export default function Notes() {
     event.preventDefault();
     editNote(note.id, note.etitle, note.edescription, note.etag);
     refClose.current.click();
+    showAlert("Updated Successfully", "success");
   };
 
   const onChange = (event) => {
@@ -47,7 +48,7 @@ export default function Notes() {
 
   return (
     <>
-      <AddNote />
+      <AddNote showAlert={showAlert} />
 
       <button
         ref={ref}
@@ -55,9 +56,7 @@ export default function Notes() {
         className="btn btn-dark d-none"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
-      >
-        Launch demo modal
-      </button>
+      ></button>
       <div
         className="modal fade"
         id="exampleModal"
@@ -155,7 +154,12 @@ export default function Notes() {
           <p className="text-danger">No Notes to display</p>
         )}
         {notes.map((note) => (
-          <NoteItem key={note._id} note={note} updateNote={updateNote} />
+          <NoteItem
+            key={note._id}
+            note={note}
+            updateNote={updateNote}
+            showAlert={showAlert}
+          />
         ))}
       </div>
     </>
