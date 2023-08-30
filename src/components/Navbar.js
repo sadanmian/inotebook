@@ -43,14 +43,10 @@ export default function Navbar() {
             </ul>
             {!localStorage.getItem("token") ? (
               <form className="d-flex" role="search">
-                <Link
-                  className="btn btn-light mx-2"
-                  to={"/login"}
-                  role="button"
-                >
+                <Link className="btn btn-light" to={"/login"} role="button">
                   Login
                 </Link>
-                <Link className="btn btn-light" to={"/signup"} role="button">
+                <Link className="btn btn-light mx-2" to={"/signup"} role="button">
                   Signup
                 </Link>
               </form>
