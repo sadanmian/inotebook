@@ -26,7 +26,7 @@ export default function Login() {
     if (json.success) {
       // save the auth token and redirect
       localStorage.setItem("token", json.authtoken);
-      history.push("/");
+      history("/");
     } else {
       alert("Invalid Credentials");
     }
