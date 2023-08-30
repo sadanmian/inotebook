@@ -35,6 +35,14 @@ export default function Navbar() {
                 </Link>
               </li>
             </ul>
+            <form className="d-flex" role="search">
+              <Link className="btn btn-light mx-2" to={"/login"} role="button">
+                Login
+              </Link>
+              <Link className="btn btn-light" to={"/signup"} role="button">
+                Signup
+              </Link>
+            </form>
           </div>
         </div>
       </nav>
