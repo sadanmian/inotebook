@@ -1,74 +1,111 @@
-# iNotebook - A Note-Taking Application
+# iNotebook - MERN Note Taking App
 
-iNotebook is a web-based note-taking application built using the MERN stack (MongoDB, Express.js, React, and Node.js). It provides users with a convenient platform to create, edit, and manage their notes seamlessly. Whether you're a student, professional, or just someone who likes to jot down ideas, iNotebook offers an intuitive and user-friendly interface for all your note-taking needs.
+![iNotebook](./public/assets/home.png)
 
-![iNotebook Screenshot](/public/toDo.png)
+Welcome to iNotebook, a full-stack MERN (MongoDB, Express, React, Node.js) web application for taking and managing notes. This app provides user authentication, allowing only registered users to create, read, edit, and delete their notes. Bootstrap has been used for styling to create an intuitive and responsive user interface.
+
+## Table of Contents
+
+- [Introduction](#inotebook---mern-note-taking-app)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
 
 ## Features
 
-- **User Authentication**: Securely sign up, log in, and manage your account. Your notes are tied to your account, ensuring data privacy.
+- **User Authentication:** Users must create an account and log in to access note-taking functionality.
+- **Create Note:** Authenticated users can create new notes with a title, description and tag.
+- **Read Note:** Users can view a list of their created notes.
+- **Edit Note:** Users can edit the content of their existing notes.
+- **Delete Note:** Users have the option to delete notes they've created.
+- **Responsive Design:** Bootstrap is used for styling, ensuring a consistent and user-friendly experience across devices.
 
-- **Create and Edit Notes**: Compose new notes or edit existing ones using a rich text editor. Customize fonts, styles, and layouts to your preference.
+## Screenshots
 
-- **Organize with Categories**: Categorize your notes by assigning them to different categories or tags. Easily filter and find notes within specific categories.
+![Home Page](./public/assets/home.png)
+_Home Page_
 
-- **Real-time Updates**: Changes made to your notes are instantly reflected, providing a seamless and responsive note-taking experience.
+![Sign up](./public/assets/singup.png)
+_Sign up_
 
-- **Cross-Device Syncing**: Access your notes from any device with an internet connection. Your notes are synchronized in real-time across all your devices.
+![Sign falied](./public/assets/signinFailed.png)
+![Sign in](./public/assets/signin1.png)
+_Sign in_
 
-- **Responsive Design**: iNotebook is designed to work smoothly on a variety of devices, including desktops, tablets, and smartphones.
+![Create Note](./public/assets/create1.png)
+![Create Note Successful](./public/assets/create2.png)
+_Create Note_
+
+![Update Note Click](./public/assets/update0.png)
+![Update Note](./public/assets/update1.png)
+![Update Note Successful](./public/assets/update2.png)
+_Create Update_
+
+![Update Note Click](./public/assets/delete1.png)
+![Update Note Successful](./public/assets/delete2.png)
+_Create Update_
 
 ## Installation
 
-1. Clone this repository to your local machine.
+1. Clone the repository using the following command:
 
-   ```
+   ```bash
    git clone https://github.com/sadanmian/inotebook.git
    ```
 
-2. Navigate to the server directory and install server dependencies.
+2. Navigate to the project directory:
 
+   ```bash
+   cd inotebook
    ```
-   cd inotebook/server
+
+3. Install server dependencies:
+
+   ```bash
    npm install
    ```
 
-3. Create a `.env` file in the server directory and configure environment variables:
+4. Navigate to the client directory:
 
-   ```
-   PORT=5000
-   MONGO_URI=your-mongodb-connection-string
-   SECRET_KEY=your-secret-key
+   ```bash
+   cd client
    ```
 
-4. Navigate to the client directory and install client dependencies.
+5. Install client dependencies:
 
-   ```
-   cd ../client
+   ```bash
    npm install
    ```
 
-5. In the client directory, update the `config.js` file with the server URL.
+## Usage
 
-   ```javascript
-   export const SERVER_URL = "http://localhost:5000"; // Update with your server URL
+1. Start the server:
+
+   ```bash
+   npm run server
    ```
 
-6. Run the server and client concurrently from the root directory.
+2. In a separate terminal, start the client:
 
+   ```bash
+   npm run client
    ```
-   npm run dev
-   ```
 
-7. Open your web browser and navigate to `http://localhost:3000` to use iNotebook.
+   This will launch the app in your default web browser. You can access it at `http://localhost:3000`.
 
-## Technologies Used
+3. Register an account or log in with an existing account to access note-taking functionality.
 
-- **Frontend**: React, Redux, HTML5, CSS3
-- **Backend**: Node.js, Express.js, MongoDB
-- **Authentication**: JSON Web Tokens (JWT)
-- **Responsive Styling**: Bootstrap
+4. Create, read, edit, and delete notes as needed.
 
-## Contribution
+## Contributing
 
-Contributions to iNotebook are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+Contributions are welcome! If you'd like to contribute to this project, please follow the guidelines below:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and test them thoroughly.
+4. Commit your changes with clear and concise commit messages.
+5. Push your changes to your forked repository.
+6. Create a pull request explaining your changes and their purpose.
