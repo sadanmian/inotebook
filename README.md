@@ -31,6 +31,7 @@ _Home Page_
 _Sign up_
 
 ![Sign falied](./public/assets/signinFailed.png)
+_Sign in falied for wrong input_
 ![Sign in](./public/assets/signin1.png)
 _Sign in_
 
@@ -39,13 +40,15 @@ _Sign in_
 _Create Note_
 
 ![Update Note Click](./public/assets/update0.png)
+_Update icon_
 ![Update Note](./public/assets/update1.png)
 ![Update Note Successful](./public/assets/update2.png)
 _Create Update_
 
-![Update Note Click](./public/assets/delete1.png)
-![Update Note Successful](./public/assets/delete2.png)
-_Create Update_
+![Delete Note Click](./public/assets/delete1.png)
+_Delete icon_
+![Delete Note Successful](./public/assets/delete2.png)
+_Delete Successful_
 
 ## Installation
 
